@@ -6,10 +6,12 @@ This application automises the boring procedure of copying all images and pastin
     performing the same task in word processing softwares. Moreover, this program resizes the images taking into account the aspect ratio
     of the images which further minimizes the boring task of formatting each image one by one.    
 
-   Key notes:
-       Add all images to be converted into a pdf file in the images folder of this application
-       The order of images to be present in pdf would be the same as the filenames sorted by name in ascending order(ignoring case)
-       Add a name to the docx file("Excluding extension") and keep going :)
+    Key notes:
+        Add all images to be converted into a pdf file in the images folder of this application
+        The order of images to be present in pdf would be the same as the filenames sorted by name in ascending order(ignoring case)
+        Add a name to the docx file("Excluding extension") and keep going :)
+        
+       
 
 Python libraries used:
     1. Python-docx
