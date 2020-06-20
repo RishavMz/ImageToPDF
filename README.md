@@ -10,3 +10,7 @@ This application automises the boring procedure of copying all images and pastin
        Add all images to be converted into a pdf file in the images folder of this application
        The order of images to be present in pdf would be the same as the filenames sorted by name in ascending order(ignoring case)
        Add a name to the docx file("Excluding extension") and keep going :)
+
+Python libraries used:
+    1. Python-docx
+    2. Python-opencv
