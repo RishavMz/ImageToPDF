@@ -7,10 +7,12 @@
 
 #   Please read the readme file before executing the program 
 
+from docx2pdf import convert
 from docx import Document
 from docx.shared import Inches, Cm
 import cv2
 import os
+
 document = Document()
 size = list()
 imagename = list()
@@ -55,3 +57,12 @@ for section in sections:
     section.right_margin = Cm(widmargin)  
 document.save(name)
 print('\n==========\n=  Done  =\n==========\n')
+print("Successfully created a docx file\n")
+print("\nPress 1 to convert to PDF\n")
+value = int(input())
+if(value == 1): 
+    convert(name)
+    convert(name,'PDF/',name[:-4]+".pdf")
+    print(name, name[:-4]+'pdf')
+    convert("PDF/")
+no = input("Press any key to continue")    
