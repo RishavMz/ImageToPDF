@@ -14,5 +14,7 @@ This application automises the boring procedure of copying all images and pastin
        
 
 Python libraries used:
+
     1. Python-docx
     2. Python-opencv
+    3. Python docx2pdf
