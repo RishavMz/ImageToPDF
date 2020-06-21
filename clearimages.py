@@ -17,10 +17,10 @@ if(len(imagename) == 0):
     print("\n No image present in folder")
     quit(0)   
 else:
-    ch = input("Press F to clear all images from images folder\n")  
+    ch = input("Press F to clear all images from images folder and then Enter\n")  
     if(ch == 'F' or ch == 'f'):
         for data in range(len(imagename)):
             print("Removing", imagename[data])
             os.remove('images/'+(imagename[data]))         
         print('\n==========\n=  Done  =\n==========\n')            
-        no = input("Press any key to continue")   
+        no = input("Press enter key to continue")   
