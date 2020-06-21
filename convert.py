@@ -17,6 +17,8 @@ document = Document()
 size = list()
 imagename = list()
 folder = 'E:\project\JPG to PDF Converter\images'
+
+    # A loop to load imagename for all images which are to be inserted(in order)
 for filename in os.listdir(folder):
     img = cv2.imread(os.path.join(folder,filename))
     if img is not None:
@@ -26,12 +28,15 @@ for filename in os.listdir(folder):
         width = img.shape[0]
         height = img.shape[1]
         size.append([width,height])
+
 print('\n', len(imagename), 'images found')  
 if(len(imagename) == 0):
     print("\n No image present in folder")
     quit(0)          
 name = input("\nEnter a name for your pdf\n") 
-name = name+'.docx'         
+name = name+'.docx'       
+
+    # A loop to insert images from the folder into docx file one by one based on size and aspect ratio
 for data in range(len(imagename)):
     print("Processing ",imagename[data])
     p = document.add_paragraph()
@@ -39,17 +44,19 @@ for data in range(len(imagename)):
     #print(size[data])
     if (size[data][0] / size[data][1] >=1.5):
         #print("Type1")
-        r.add_picture('images/'+(imagename[data]), height = Inches(9.5) , width = Inches(9.5/size[data][0]*size[data][1]))    
+        r.add_picture('images/'+(imagename[data]), height = Cm(27) , width = Cm(27/size[data][0]*size[data][1]))    
     elif (size[data][0] / size[data][1] >=1 ):
         #print("Type2")
-        r.add_picture('images/'+(imagename[data]), height = Inches(8) , width = Inches(8/size[data][0]*size[data][1]))    
+        r.add_picture('images/'+(imagename[data]), height = Cm(24) , width = Cm(24/size[data][0]*size[data][1]))    
     else:
         #print("Type3")
-        r.add_picture('images/'+(imagename[data]), width = Inches(8) , height = Inches(8/size[data][1]*size[data][0]))
-    document.add_page_break()
-widmargin = 0.5
-lenmargin = 1    
+        r.add_picture('images/'+(imagename[data]), width = Cm(21.4) , height = Cm(21.4/size[data][1]*size[data][0]))
+
+widmargin = 0.1
+lenmargin = 0.5    
 sections = document.sections
+    
+    # Page margins narrowed
 for section in sections:
     section.top_margin = Cm(lenmargin)
     section.bottom_margin = Cm(lenmargin)
@@ -58,11 +65,13 @@ for section in sections:
 document.save(name)
 print('\n==========\n=  Done  =\n==========\n')
 print("Successfully created a docx file\n")
-print("\nPress 1 to convert to PDF\n")
+    
+    # Converting the docx file to pdf file upon user's choice
+print("\nPress 1 to convert to PDF and then press enter\n")
 value = int(input())
 if(value == 1): 
+    print("\n Please wait until the process is completed....\nThis may take a minute\nYou will be displayed a success message after completion\n")
     convert(name)
     convert(name,'PDF/',name[:-4]+".pdf")
-    print(name, name[:-4]+'pdf')
     convert("PDF/")
-no = input("Press any key to continue")    
+no = input("\n\nSuccessfully converted to PDF format.\n\nPress enter key to continue")    
