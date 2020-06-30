@@ -38,6 +38,7 @@ of the images which further minimizes the boring task of formatting each image o
     3. Run the convert.py file To collect images from images from IMAGES folder and 
             convert it to docx file.
             Then the application promts the user .
+        Note : The file would take some time to load images folder/    
     4. If you want to have a look at the docx file before conversion to pdf format, 
             then press any key other than 1 and press enter. 
             Search the file by name given earlier and view it in any text editor.
