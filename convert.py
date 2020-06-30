@@ -71,7 +71,5 @@ print("\nPress 1 to convert to PDF and then press enter\n")
 value = int(input())
 if(value == 1): 
     print("\n Please wait until the process is completed....\nThis may take a minute\nYou will be displayed a success message after completion\n")
-    convert(name)
     convert(name,'PDF/',name[:-4]+".pdf")
-    convert("PDF/")
 no = input("\n\nSuccessfully converted to PDF format.\n\nPress enter key to continue")
