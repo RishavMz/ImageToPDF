@@ -12,11 +12,14 @@ from docx import Document
 from docx.shared import Inches, Cm
 import cv2
 import os
+import inspect
+
 
 document = Document()
 size = list()
 imagename = list()
-folder = 'E:\project\JPG to PDF Converter\images'
+path= os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+folder = path+'\images'
 
     # A loop to load imagename for all images which are to be inserted(in order)
 for filename in os.listdir(folder):
