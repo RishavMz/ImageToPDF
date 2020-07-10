@@ -65,6 +65,7 @@ of the images which further minimizes the boring task of formatting each image o
 
 Python libraries used:
 
-    1. Python-docx
-    2. Python-opencv
-    3. Python docx2pdf
+    1. Tkinter 
+    2. Python-docx
+    3. Python-opencv
+    4. Python docx2pdf
