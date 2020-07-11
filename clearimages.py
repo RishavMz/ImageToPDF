@@ -6,7 +6,8 @@ import cv2
 import os
 
 imagename = list()
-folder = 'E:\project\JPG to PDF Converter\images'
+path= os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+folder = path+'\images'
 for filename in os.listdir(folder):
     img = cv2.imread(os.path.join(folder,filename))
     if img is not None:
