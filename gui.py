@@ -14,6 +14,7 @@ import cv2
 import os
 import inspect
 from docx2pdf import convert
+from tkinter.filedialog import askopenfilename
 
 images_name = list()
 def convert1():
@@ -50,6 +51,7 @@ def convert1():
         print("Processing ",imagename[data])
         p = document.add_paragraph()
         r = p.add_run()
+        #print(size[data])
         if (size[data][0] / size[data][1] >=1.5):
             #print("Type1")
             r.add_picture(str(imagename[data]), height = Cm(27) , width = Cm(27/size[data][0]*size[data][1]))    
@@ -58,7 +60,8 @@ def convert1():
             r.add_picture(str(imagename[data]), height = Cm(24) , width = Cm(24/size[data][0]*size[data][1]))    
         else:
             #print("Type3")
-            r.add_picture(str(imagename[data]), width = Cm(21.4) , height = Cm(21.4/size[data][1]*size[data][0]))        
+            r.add_picture(str(imagename[data]), width = Cm(21.4) , height = Cm(21.4/size[data][1]*size[data][0]))
+
     widmargin = 0.1
     lenmargin = 0.5    
     sections = document.sections
@@ -99,7 +102,6 @@ def convertfn():
     space.pack()
     convert.mainloop()
 
-
 def createpdf1():
     print("Converted from docx to pdf format")
     convertedpdf = tkinter.Tk() 
@@ -136,20 +138,49 @@ def createpdffn():
     lab1 = Label(createpdf , text = " Please wait until the process is completed....\nThis may take a minute\nYou will be displayed a success message after completion\n\nNo need to click the above button more than once.\n Sorry, but this process is a bit slow.\n\n")        
     lab1.pack()
     createpdf.mainloop()
-def clearimagesfn():
-    print("Deleted all images from IMAGES folder")
 
+def addimagesfn():
+    adding = tkinter.Tk() 
+    adding.title("Add images")
+    w4 = Canvas(adding, width=40, height=60) 
+    w4.pack() 
+    canvas_height=20
+    canvas_width=200
+    w4.create_text(0, 30, anchor=W, font="Purisa",
+            text="PDF", fill="maroon")
+    print("Selecting images to add")
+    while(True):
+        path = askopenfilename() # show an "Open" dialog box and return the path to the selected file
+        images_name.append(path)
+        if(len(path)<=0):
+            break
+    if(len(images_name) == 0):
+        print("\n No image present in folder")
+        label1 = Label(adding,text = "No image found in Images folder\n")
+    else:
+        for data in range(len(images_name)):
+            print("Addng", images_name[data])
+        print('\n==========\n=  Done  =\n==========\n')
+        label1 = Label(adding,text = "Successfully added all images to memory\n")
+    label1.pack()
+    adding.mainloop()    
 master = tkinter.Tk() 
 master.title("Images to PDF converter")
 w = Canvas(master, width=40, height=60) 
 w.pack() 
-canvas_height=20
+canvas_height=50
 canvas_width=200
-
-l1 = Label(master,text="This is a simple program to convert Images into docx / PDF file format.\n\nPlease add all the images you want to add to your PDF in the images folder.\nIf you have not, conversion might cause an error.\n\n")
+w.create_text(0, 30, anchor=W, font="Prussia",
+            text="PDF", fill="maroon")
+l1 = Label(master,text="This is a simple program to convert Images into docx and then into PDF file format.\n\nPlease add all the images you want to add to your PDF in the images folder.\nIf you have not, conversion might cause an error.\n\n")
 l1.pack()
 
-button1 = tkinter.Button(master, text='Convert Images to PDF/docx', width=35, command = convertfn)
+button1 = tkinter.Button(master, text='Add images to convert into PDF', width=35, command = addimagesfn)
+button1.pack()
+space = Label(text = "\n")
+space.pack()
+
+button1 = tkinter.Button(master, text='Convert Images to docx', width=35, command = convertfn)
 button1.pack()
 space = Label(text = "\n")
 space.pack()
@@ -159,8 +190,4 @@ button1.pack()
 space = Label(text = "\n")
 space.pack()
 
-button1 = tkinter.Button(master, text='Clear images from the Images folder', width=35, command = clearimagesfn)
-button1.pack()
-space = Label(text = "\n")
-space.pack()
 master.mainloop()
