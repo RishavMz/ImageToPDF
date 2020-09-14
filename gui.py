@@ -50,8 +50,15 @@ def convert1():
         print("Processing ",imagename[data])
         p = document.add_paragraph()
         r = p.add_run()
-        r.add_picture(str(imagename[data]), height = Cm(27) , width = Cm(27/size[data][0]*size[data][1]))    
-        
+        if (size[data][0] / size[data][1] >=1.5):
+            #print("Type1")
+            r.add_picture(str(imagename[data]), height = Cm(27) , width = Cm(27/size[data][0]*size[data][1]))    
+        elif (size[data][0] / size[data][1] >=1 ):
+            #print("Type2")
+            r.add_picture(str(imagename[data]), height = Cm(24) , width = Cm(24/size[data][0]*size[data][1]))    
+        else:
+            #print("Type3")
+            r.add_picture(str(imagename[data]), width = Cm(21.4) , height = Cm(21.4/size[data][1]*size[data][0]))        
     widmargin = 0.1
     lenmargin = 0.5    
     sections = document.sections
