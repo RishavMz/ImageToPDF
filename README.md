@@ -4,8 +4,7 @@ A python based desktop application to automate the extremely slow and boring tas
     
     
 This application automises the boring procedure of copying all images and pasting in document which is very slow process,
-and may also sometimes lead to freezing of your application. However, this is extremely fast compared to 
-performing the same task in word processing softwares. Moreover, this program resizes the images taking into account the aspect ratio
+and may also sometimes lead to freezing of your application, and then also converts them into PDF file format. Moreover, this program resizes the images taking into account the aspect ratio
 of the images which further minimizes the boring task of formatting each image one by one.    
 
 
@@ -23,33 +22,27 @@ of the images which further minimizes the boring task of formatting each image o
     5. Now, you are ready. Installation is complete.
 
 
-    *********************************************************************************************
+    ********************************************************************************************
+    
+    Steps for performing the conversion :
+     
+            1. Run the gui.py file. There you go!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            2. Click on select images button, and select images one by one. 
+		When no more image to select , close image selection box .
+	    3. Click on convert to docx file to convert the images first to a docx file format.	    
+	    4. Click on convert to PDF and get your PDF file generated.
+		(This process may take some time).
+	    3. You can find the pdf in the PDF folder.
+            Note: The filenames are by default sample.docx and sample.pdf and can be renamed  
+                    later as per your convenience.
+                  Rename the converted PDF file before creating a new one, if not then the previous 
+                    one would be overwritten by the new one. 
 
-    Note - This application performs two steps.
-        First it collects the images and converts them to a docx format, 
-        and then in the second step, it converts the docx file into a PDF file. 
-
-    Steps to convert images to pdf:
-
-    1. Copy all the images you want to be present in the pdf file and paste them
-            in IMAGES folder of this application.
-    2. Order the images by their names. The images would be in the docx and then in
-            pdf file based on the sorted order by names.
-    3. Run the convert.py file To collect images from images from IMAGES folder and 
-            convert it to docx file.
-            Then the application promts the user .
-        Note : The file would take some time to load images folder/    
-    4. If you want to have a look at the docx file before conversion to pdf format, 
-            then press any key other than 1 and press enter. 
-            Search the file by name given earlier and view it in any text editor.
-            Later, you can Run the createpdf.py file to convert the docx file to pdf format.
-    5. If you want to directly convert to pdf from images, press 1 and then press enter.
-    6. The conversion to pdf may take some time. Please wait until the program shows a 
-            success message.
-    7. You can find the pdf in the PDF file.
-    8. After completion, you can run the clearimages.py file to clear the IMAGES folder for 
-            further next new conversions.
-
+	   	 Please colse application and restart if you have selected the
+			 images in wrong order.
+   
+    
+                    
     ==================================================================================================
 
     ##################################################################################################
@@ -69,3 +62,4 @@ Python libraries used:
     2. Python-docx
     3. Python-opencv
     4. Python docx2pdf
+
