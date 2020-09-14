@@ -50,17 +50,8 @@ def convert1():
         print("Processing ",imagename[data])
         p = document.add_paragraph()
         r = p.add_run()
-        #print(size[data])
-        if (size[data][0] / size[data][1] >=1.5):
-            #print("Type1")
-            r.add_picture(str(imagename[data]), height = Cm(27) , width = Cm(27/size[data][0]*size[data][1]))    
-        elif (size[data][0] / size[data][1] >=1 ):
-            #print("Type2")
-            r.add_picture(str(imagename[data]), height = Cm(24) , width = Cm(24/size[data][0]*size[data][1]))    
-        else:
-            #print("Type3")
-            r.add_picture(str(imagename[data]), width = Cm(21.4) , height = Cm(21.4/size[data][1]*size[data][0]))
-
+        r.add_picture(str(imagename[data]), height = Cm(27) , width = Cm(27/size[data][0]*size[data][1]))    
+        
     widmargin = 0.1
     lenmargin = 0.5    
     sections = document.sections
@@ -104,25 +95,40 @@ def convertfn():
 
 def createpdf1():
     print("Converted from docx to pdf format")
+    convertedpdf = tkinter.Tk() 
+    convertedpdf.title("Images to docx format completed")
+    w1 = Canvas(convertedpdf, width=40, height=60) 
+    w1.pack() 
+    canvas_height=20
+    canvas_width=200
+    w1.create_text(0, 30, anchor=W, font="Purisa",
+            text="PDF", fill="maroon")
+    print("\n Please wait until the process is completed....\nThis may take a minute\nYou will be displayed a success message after completion\n")
+    convert("sample.docx",'PDF/',"sample.pdf")
+    lab2 = Label(convertedpdf , text = "Successfully converted PDF file. \nPlease check the PDF folder to find the converted PDF file\n\n")
+    lab2.pack()
+    print("\nSuccessfully converted PDF file. \nPlease check the PDF folder to find the converted PDF file\n\n")
+
 def createpdffn():
     createpdf = tkinter.Tk() 
     createpdf.title("docx to pdf format")
-    w = Canvas(createpdf, width=40, height=60) 
-    w.pack() 
+    w3 = Canvas(createpdf, width=40, height=60) 
+    w3.pack() 
     canvas_height=20
     canvas_width=200
-    label1 = Label(createpdf, text = "Please enter the filename of the docx file ( without docx entension to convert it into PDF format)\n\n")
+    w3.create_text(0, 30, anchor=W, font="Purisa",
+            text="PDF", fill="maroon")
+    label1 = Label(createpdf, text = "Please note. The latest sample.docx file created within the project folder would be \n converted to PDF format under the name sample.pdf\n Please make sure you perform this operation after conversion \n of images into docx file format.\n")
     label1.pack()
-    fnameentry = Entry(createpdf)
-    fnameentry.pack()
     space = Label(createpdf,text = "\n")
     space.pack()
-    button1 = tkinter.Button(createpdf, text='Convert to PDF/docx', width=35, command = createpdf1)
+    button1 = tkinter.Button(createpdf, text='Convert to PDF', width=35, command = createpdf1)
     button1.pack()
     space = Label(createpdf,text = "\n")
     space.pack()
+    lab1 = Label(createpdf , text = " Please wait until the process is completed....\nThis may take a minute\nYou will be displayed a success message after completion\n\nNo need to click the above button more than once.\n Sorry, but this process is a bit slow.\n\n")        
+    lab1.pack()
     createpdf.mainloop()
-
 def clearimagesfn():
     print("Deleted all images from IMAGES folder")
 
