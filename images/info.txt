@@ -1,2 +1,0 @@
-
-This folder must contain all images properly rotated and sorted by names as required in the docx file
