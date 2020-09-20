@@ -36,8 +36,8 @@ def convert1():
             print("Found ", filename)
             imagename.append(filename)
             image = img.shape
-            width = img.shape[0]
-            height = img.shape[1]
+            width = img.shape[1]
+            height = img.shape[0]
             size.append([width,height])
     print('\n', len(imagename), 'images found')  
     if(len(imagename) == 0):
@@ -51,25 +51,26 @@ def convert1():
         print("Processing ",imagename[data])
         p = document.add_paragraph()
         r = p.add_run()
-        #print(size[data])
-        if (size[data][0] / size[data][1] >=1.5):
-            #print("Type1")
-            r.add_picture(str(imagename[data]), height = Cm(27) , width = Cm(27/size[data][0]*size[data][1]))    
-        elif (size[data][0] / size[data][1] >=1 ):
-            #print("Type2")
-            r.add_picture(str(imagename[data]), height = Cm(24) , width = Cm(24/size[data][0]*size[data][1]))    
+        print(size[data])
+        if (size[data][0] / size[data][1] >= 1):
+            print("Type1 width >= height")
+            r.add_picture(str(imagename[data]), height = Cm((20/size[data][0]) * size[data][1]) , width = Cm(20)  )  
+        elif(size[data][1] / size[data][0] >= (25.94/20.59) ):
+            print("Type2")
+            r.add_picture(str(imagename[data]), height = Cm(25) , width = Cm(25/size[data][1]*size[data][0]))    
         else:
-            #print("Type3")
-            r.add_picture(str(imagename[data]), width = Cm(21.4) , height = Cm(21.4/size[data][1]*size[data][0]))
+            print("Type3")
+            r.add_picture(str(imagename[data]), width = Cm(20) , height = Cm(25))
 
-    widmargin = 0.1
-    lenmargin = 0.5    
+    widmargin = 0.5
+    lenmargintop = 1.5
+    lenmarginbottom = 0.5    
     sections = document.sections
         
         # Page margins narrowed
     for section in sections:
-        section.top_margin = Cm(lenmargin)
-        section.bottom_margin = Cm(lenmargin)
+        section.top_margin = Cm(lenmargintop)
+        section.bottom_margin = Cm(lenmarginbottom)
         section.left_margin = Cm(widmargin)
         section.right_margin = Cm(widmargin)  
     document.save(name)
