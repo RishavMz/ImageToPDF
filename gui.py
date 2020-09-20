@@ -36,8 +36,8 @@ def convert1():
             print("Found ", filename)
             imagename.append(filename)
             image = img.shape
-            width = img.shape[1]
-            height = img.shape[0]
+            width = img.shape[0]
+            height = img.shape[1]
             size.append([width,height])
     print('\n', len(imagename), 'images found')  
     if(len(imagename) == 0):
@@ -51,15 +51,15 @@ def convert1():
         print("Processing ",imagename[data])
         p = document.add_paragraph()
         r = p.add_run()
-        print(size[data])
-        if (size[data][0] / size[data][1] >= 1):
-            print("Type1 width >= height")
-            r.add_picture(str(imagename[data]), height = Cm((20/size[data][0]) * size[data][1]) , width = Cm(20)  )  
-        elif(size[data][1] / size[data][0] >= (25.94/20.59) ):
-            print("Type2")
-            r.add_picture(str(imagename[data]), height = Cm(25) , width = Cm(25/size[data][1]*size[data][0]))    
+        #print(size[data])
+        if (size[data][1] / size[data][0] >= 1):
+        #    print("Type1 width >= height")
+            r.add_picture(str(imagename[data]), height = Cm((20/size[data][1]) * size[data][0]) , width = Cm(20)  )  
+        elif(size[data][0] / size[data][1] >= (25.94/20.59) ):
+        #    print("Type2")
+            r.add_picture(str(imagename[data]), height = Cm(25) , width = Cm(25/size[data][0]*size[data][1]))    
         else:
-            print("Type3")
+        #    print("Type3")
             r.add_picture(str(imagename[data]), width = Cm(20) , height = Cm(25))
 
     widmargin = 0.5
