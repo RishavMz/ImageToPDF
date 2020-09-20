@@ -1,9 +1,11 @@
 #Author : RishavMz
 #
-#   This file combines the function from all the other files to generate an interactive GUI based application for the
-#   program using tkinker. This is just a GUI variation of the entire application with some minor changes. 
+#   This file provides an interactive GUI based application for the user to select images from his/her PC and 
+#   convert it into docx format; and if required, then into PDF format.
 #   
-#   Hope you like it :)
+#   The GUI interface of this program is made using tkinker.
+#   
+#   Hope you like it :) ⭐🌟
 
 import tkinter
 from tkinter import *
