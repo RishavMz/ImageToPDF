@@ -38,7 +38,7 @@ of the images which further minimizes the boring task of formatting each image o
                   Rename the converted PDF file before creating a new one, if not then the previous 
                     one would be overwritten by the new one. 
 
-	   	 Please colse application and restart if you have selected the
+	   	 Please close application and restart if you have selected the
 			 images in wrong order.
    
     
