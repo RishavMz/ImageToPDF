@@ -1,0 +1,8 @@
+#Created PDF
+.pdf
+
+#Created doc file
+.doc
+
+#PDF files created if stored in PDF folder
+/.pdf
