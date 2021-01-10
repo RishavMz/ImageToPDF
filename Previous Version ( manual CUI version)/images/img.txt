@@ -1,1 +1,0 @@
-Images which are to be added in PDF are to be added serially in this folder.

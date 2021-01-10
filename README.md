@@ -1,7 +1,10 @@
 # Image-To-PDF-using-Python
 A python based desktop application to automate the extremely slow and boring task of copying and pasting images to docx file and further resizing .
     
-    
+![GUI-1](https://github.com/RishavMz/IMAGE_TO_PDF_USING_PYTHON/blob/MASTER/p1.JPG?raw=true)
+![GUI-2](https://github.com/RishavMz/IMAGE_TO_PDF_USING_PYTHON/blob/MASTER/p2.JPG?raw=true)
+![GUI-3](https://github.com/RishavMz/IMAGE_TO_PDF_USING_PYTHON/blob/MASTER/p3.JPG?raw=true)
+![CONSOLE LOG](https://github.com/RishavMz/IMAGE_TO_PDF_USING_PYTHON/blob/MASTER/p4.JPG?raw=true)    
     
 This application automises the boring procedure of copying all images and pasting in document which is very slow process,
 and may also sometimes lead to freezing of your application, and then also converts them into PDF file format. Moreover, this program resizes the images taking into account the aspect ratio

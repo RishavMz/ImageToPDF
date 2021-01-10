@@ -44,7 +44,7 @@ def convert1():
     print('\n', len(imagename), 'images found')  
     if(len(imagename) == 0):
         print("\n No image present in folder")
-        label1 = Label(converted,text = "No images found in Images folder!!! \nCreated a blank docx file\n")
+        label1 = Label(converted,text = "No images selected!!! \nCreated a blank docx file\n")
         label1.pack()
     name = "sample"
     name = name+'.docx'
@@ -93,7 +93,7 @@ def convertfn():
     canvas_width=200
     w2.create_text(0, 30, anchor=W, font="Purisa",
             text="PDF", fill="maroon")
-    label1 = Label(convert,text = "Please make sure that you have added all photos to be inserted in pdf serially in the images folder\n\n")
+    label1 = Label(convert,text = "Please make sure that you have selected all photos to be inserted in pdf .\n\n")
     label1.pack()
     name = Label(convert,text = "Please note, the name of docx/PDF file would be sample.docx/sample.pdf by default.\n You can rename it later\n")
     name.pack()
@@ -159,7 +159,7 @@ def addimagesfn():
             break
     if(len(images_name) == 0):
         print("\n No image present in folder")
-        label1 = Label(adding,text = "No image found in Images folder\n")
+        label1 = Label(adding,text = "No image selected\n")
     else:
         for data in range(len(images_name)):
             print("Addng", images_name[data])
@@ -175,7 +175,7 @@ canvas_height=50
 canvas_width=200
 w.create_text(0, 30, anchor=W, font="Prussia",
             text="PDF", fill="maroon")
-l1 = Label(master,text="This is a simple program to convert Images into docx and then into PDF file format.\n\nPlease add all the images you want to add to your PDF in the images folder.\nIf you have not, conversion might cause an error.\n\n")
+l1 = Label(master,text="This is a simple program to convert Images into docx and then into PDF file format.\n\nPlease select all the images you want to add to your PDF in your required order.\n\n")
 l1.pack()
 
 button1 = tkinter.Button(master, text='Add images to convert into PDF', width=35, command = addimagesfn)
