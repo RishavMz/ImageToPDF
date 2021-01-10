@@ -4,10 +4,10 @@ A python based desktop application to automate the extremely slow and boring tas
 <code><img src="https://raw.githubusercontent.com/RishavMz/Image-To-PDF-using-Python/master/images/p1.JPG" height="200"></code>
 <code><img src="https://raw.githubusercontent.com/RishavMz/Image-To-PDF-using-Python/master/images/p2.JPG" height="200"></code>
 <code><img src="https://raw.githubusercontent.com/RishavMz/Image-To-PDF-using-Python/master/images/p3.JPG" height="200"></code>
-<code><img src="https://raw.githubusercontent.com/RishavMz/Image-To-PDF-using-Python/master/images/p4.JPG" ></code>
+<code><img src="https://raw.githubusercontent.com/RishavMz/Image-To-PDF-using-Python/master/images/p4.JPG" height="500"></code>
 
     
-This application automises the boring procedure of copying all images and pasting in document which is very slow process,
+This application automates the boring procedure of copying all images and pasting in document which is very slow process,
 and may also sometimes lead to freezing of your application, and then also converts them into PDF file format. Moreover, this program resizes the images taking into account the aspect ratio
 of the images which further minimizes the boring task of formatting each image one by one.    
 
