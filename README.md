@@ -18,12 +18,11 @@ of the images which further minimizes the boring task of formatting each image o
 
     Follow the steps:(installation)
 
-    1. Download python from
-    2. Run the exe file to get python installed in your system.
-    3. Open the folder containing this application.
-    4. Run the setup.py program to get the dependencies for this application
+    1. Download python from https://www.python.org/downloads/ if not present.
+    2. Open the folder containing this application.
+    3. Run the setup.bat program to get the dependencies for this application
             downloaded in your system.
-    5. Now, you are ready. Installation is complete.
+    4. Now, you are ready. Installation is complete. Run setup.py
 
 
     ********************************************************************************************
