@@ -1,8 +1,11 @@
 #Created PDF
-.pdf
+*.pdf
 
 #Created doc file
-.doc
+*.doc
 
 #PDF files created if stored in PDF folder
-/.pdf
+PDF/*.txt
+
+#/build files
+build/

@@ -116,7 +116,7 @@ def createpdf1():
     w1.create_text(0, 30, anchor=W, font="Purisa",
             text="PDF", fill="maroon")
     print("\n Please wait until the process is completed....\nThis may take a minute\nYou will be displayed a success message after completion\n")
-    convert("sample.docx",'PDF/',"sample.pdf")
+    convert("sample.docx",'',"sample.pdf")
     lab2 = Label(convertedpdf , text = "Successfully converted PDF file. \nPlease check the PDF folder to find the converted PDF file\n\n")
     lab2.pack()
     print("\nSuccessfully converted PDF file. \nPlease check the PDF folder to find the converted PDF file\n\n")

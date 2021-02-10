@@ -1,1 +1,0 @@
-The files after conversion to PDF format get stored in this folder

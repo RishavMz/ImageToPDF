@@ -29,13 +29,14 @@ of the images which further minimizes the boring task of formatting each image o
     
     Steps for performing the conversion :
      
-            1. Run the gui.py file. There you go!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            1. Run the setup.bat file. There you go!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                After setup, open GUI.py
             2. Click on select images button, and select images one by one. 
 		When no more image to select , close image selection box .
 	    3. Click on convert to docx file to convert the images first to a docx file format.	    
 	    4. Click on convert to PDF and get your PDF file generated.
 		(This process may take some time).
-	    3. You can find the pdf in the PDF folder.
+	    3. You can find the pdf in the same folder.
             Note: The filenames are by default sample.docx and sample.pdf and can be renamed  
                     later as per your convenience.
                   Rename the converted PDF file before creating a new one, if not then the previous 
