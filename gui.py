@@ -18,17 +18,13 @@ import inspect
 from docx2pdf import convert
 from tkinter.filedialog import askopenfilename
 
+master = tkinter.Tk() 
+master.title("Images to PDF converter")
+state = 0
+
 images_name = list()
-def convert1():
-    converted = tkinter.Tk() 
-    converted.title("Images to docx format completed")
-    w1 = Canvas(converted, width=40, height=60) 
-    w1.pack() 
-    canvas_height=20
-    canvas_width=200
-    w1.create_text(0, 30, anchor=W, font="Purisa",
-            text="PDF", fill="maroon")
-    print("Converted to docx  format ")
+def convertfn():
+
     document = Document()
     size = list()
     imagename = list()
@@ -44,7 +40,7 @@ def convert1():
     print('\n', len(imagename), 'images found')  
     if(len(imagename) == 0):
         print("\n No image present in folder")
-        label1 = Label(converted,text = "No images selected!!! \nCreated a blank docx file\n")
+        label1 = Label(master,text = "No images selected!!! \nCreated a blank docx file\n")
         label1.pack()
     name = "sample"
     name = name+'.docx'
@@ -78,79 +74,35 @@ def convert1():
     document.save(name)
     print('\n==========\n=  Done  =\n==========\n')
     print("Successfully created a docx file\n")
-    label1 = Label(converted,text = "Successfully created a docx file\n")
+    label1 = Label(master,text = "Successfully created a docx file\n")
     if(len(imagename)>0):
         label1.pack()
-    converted.mainloop()
+    
 
-
-def convertfn():
-    convert = tkinter.Tk() 
-    convert.title("Images to docx format")
-    w2 = Canvas(convert, width=40, height=60) 
-    w2.pack() 
-    canvas_height=20
-    canvas_width=200
-    w2.create_text(0, 30, anchor=W, font="Purisa",
-            text="PDF", fill="maroon")
-    label1 = Label(convert,text = "Please make sure that you have selected all photos to be inserted in pdf .\n\n")
-    label1.pack()
-    name = Label(convert,text = "Please note, the name of docx/PDF file would be sample.docx/sample.pdf by default.\n You can rename it later\n")
-    name.pack()
-    space = Label(convert,text = "\n")
-    space.pack()
-    button1 = tkinter.Button(convert, text='Convert to docx', width=35, command = convert1)
-    button1.pack()
-    space = Label(convert,text = "\n")
-    space.pack()
-    convert.mainloop()
 
 def createpdf1():
     print("Converted from docx to pdf format")
-    convertedpdf = tkinter.Tk() 
-    convertedpdf.title("Images to docx format completed")
-    w1 = Canvas(convertedpdf, width=40, height=60) 
-    w1.pack() 
-    canvas_height=20
-    canvas_width=200
-    w1.create_text(0, 30, anchor=W, font="Purisa",
-            text="PDF", fill="maroon")
+
+    
     print("\n Please wait until the process is completed....\nThis may take a minute\nYou will be displayed a success message after completion\n")
     convert("sample.docx",'',"sample.pdf")
-    lab2 = Label(convertedpdf , text = "Successfully converted PDF file. \nPlease check the PDF folder to find the converted PDF file\n\n")
+    lab2 = Label(master , text = "Successfully converted PDF file. \n")
     lab2.pack()
-    print("\nSuccessfully converted PDF file. \nPlease check the PDF folder to find the converted PDF file\n\n")
+    print("\nSuccessfully converted PDF file.\n\n")
 
 def createpdffn():
-    createpdf = tkinter.Tk() 
-    createpdf.title("docx to pdf format")
-    w3 = Canvas(createpdf, width=40, height=60) 
-    w3.pack() 
-    canvas_height=20
-    canvas_width=200
-    w3.create_text(0, 30, anchor=W, font="Purisa",
-            text="PDF", fill="maroon")
-    label1 = Label(createpdf, text = "Please note. The latest sample.docx file created within the project folder would be \n converted to PDF format under the name sample.pdf\n Please make sure you perform this operation after conversion \n of images into docx file format.\n")
+
+    
+    label1 = Label(master, text = "Please note. The latest sample.docx file created within the project folder would be \n converted to PDF format under the name sample.pdf\n Please make sure you perform this operation after conversion \n of images into docx file format.\n")
     label1.pack()
-    space = Label(createpdf,text = "\n")
-    space.pack()
-    button1 = tkinter.Button(createpdf, text='Convert to PDF', width=35, command = createpdf1)
+    button1 = tkinter.Button(master, text='Convert to PDF', width=35, command = createpdf1)
     button1.pack()
-    space = Label(createpdf,text = "\n")
-    space.pack()
-    lab1 = Label(createpdf , text = " Please wait until the process is completed....\nThis may take a minute\nYou will be displayed a success message after completion\n\nNo need to click the above button more than once.\n Sorry, but this process is a bit slow.\n\n")        
+    lab1 = Label(master , text = " Please wait until the process is completed....\nThis may take a minute\nYou will be displayed a success message after completion\n\nNo need to click the above button more than once.\n Sorry, but this process is a bit slow.\n\n")        
     lab1.pack()
-    createpdf.mainloop()
 
 def addimagesfn():
-    adding = tkinter.Tk() 
-    adding.title("Add images")
-    w4 = Canvas(adding, width=40, height=60) 
-    w4.pack() 
-    canvas_height=20
-    canvas_width=200
-    w4.create_text(0, 30, anchor=W, font="Purisa",
-            text="PDF", fill="maroon")
+
+
     print("Selecting images to add")
     while(True):
         path = askopenfilename() # show an "Open" dialog box and return the path to the selected file
@@ -164,17 +116,13 @@ def addimagesfn():
         for data in range(len(images_name)):
             print("Addng", images_name[data])
         print('\n==========\n=  Done  =\n==========\n')
-        label1 = Label(adding,text = "Successfully added all images to memory\n")
+        label1 = Label(master,text = "Successfully added all images to memory\n")
     label1.pack()
-    adding.mainloop()    
-master = tkinter.Tk() 
-master.title("Images to PDF converter")
-w = Canvas(master, width=40, height=60) 
-w.pack() 
-canvas_height=50
-canvas_width=200
-w.create_text(0, 30, anchor=W, font="Prussia",
-            text="PDF", fill="maroon")
+
+
+
+space = Label(text = "\n")
+space.pack()
 l1 = Label(master,text="This is a simple program to convert Images into docx and then into PDF file format.\n\nPlease select all the images you want to add to your PDF in your required order.\n\n")
 l1.pack()
 
@@ -182,12 +130,10 @@ button1 = tkinter.Button(master, text='Add images to convert into PDF', width=35
 button1.pack()
 space = Label(text = "\n")
 space.pack()
-
 button1 = tkinter.Button(master, text='Convert Images to docx', width=35, command = convertfn)
 button1.pack()
 space = Label(text = "\n")
 space.pack()
-
 button1 = tkinter.Button(master, text='Convert docx file to PDF', width=35, command = createpdffn)
 button1.pack()
 space = Label(text = "\n")

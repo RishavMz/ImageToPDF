@@ -4,8 +4,12 @@
 #Created doc file
 *.doc
 
-#PDF files created if stored in PDF folder
-PDF/*.txt
-
 #/build files
 build/
+
+#Prod
+
+sample.docx
+sample.pdf
+
+PDF/
