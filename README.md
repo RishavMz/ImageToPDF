@@ -22,36 +22,13 @@ of the images which further minimizes the boring task of formatting each image o
 
     Follow the steps:(installation)
 
-    1. Download python from https://www.python.org/downloads/ if not present.
-    2. Open the folder containing this application.
-    3. Run the setup.bat program to get the dependencies for this application
-            downloaded in your system.
-    4. Now, you are ready. Installation is complete. Run setup.py
+    1. Download the .rar file into your pc / laptop
+    2. Extract the file.
+    3. Open gui.exe
+    4. Enjoy
 
-
-    ********************************************************************************************
-    
-    Steps for performing the conversion :
-     
-            1. Run the setup.bat file. There you go!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                After setup, open GUI.py
-            2. Click on select images button, and select images one by one. 
-		When no more image to select , close image selection box .
-	    3. Click on convert to docx file to convert the images first to a docx file format.	    
-	    4. Click on convert to PDF and get your PDF file generated.
-		(This process may take some time).
-	    3. You can find the pdf in the same folder.
-            Note: The filenames are by default sample.docx and sample.pdf and can be renamed  
-                    later as per your convenience.
-                  Rename the converted PDF file before creating a new one, if not then the previous 
-                    one would be overwritten by the new one. 
-
-	   	 Please close application and restart if you have selected the
-			 images in wrong order.
-   
-    
-                    
-    ==================================================================================================
+	
+    Note: The converted PDF is stored in PDF folder in your directory.
 
     ##################################################################################################
 
