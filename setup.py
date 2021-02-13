@@ -1,7 +1,8 @@
 from cx_Freeze import setup, Executable
+import sys
 
-base = None    
-
+base = None  
+  
 executables = [Executable("gui.py", base=base)]
 
 packages = ["idna", "os","sys"]

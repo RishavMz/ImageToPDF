@@ -24,7 +24,7 @@ state = 0
 
 images_name = list()
 def convertfn():
-
+    global state
     document = Document()
     size = list()
     imagename = list()
@@ -75,34 +75,39 @@ def convertfn():
     print('\n==========\n=  Done  =\n==========\n')
     print("Successfully created a docx file\n")
     label1 = Label(master,text = "Successfully created a docx file\n")
-    if(len(imagename)>0):
-        label1.pack()
+    if(state == 1):  
+        if(len(imagename)>0):
+            label1.pack()
+        state = 2
+    
     
 
 
 def createpdf1():
+    global state
     print("Converted from docx to pdf format")
 
     
     print("\n Please wait until the process is completed....\nThis may take a minute\nYou will be displayed a success message after completion\n")
-    convert("sample.docx",'',"sample.pdf")
-    lab2 = Label(master , text = "Successfully converted PDF file. \n")
+    convert("sample.docx",'PDF/',"sample.pdf")
+    lab2 = Label(master , text = "Successfully converted PDF file.\n Check the PDF folder to find your file as sample.pdf \n")
     lab2.pack()
-    print("\nSuccessfully converted PDF file.\n\n")
+    print("\nSuccessfully created PDF file.\n Check the PDF folder to find your file as sample.pdf\n\n")
 
 def createpdffn():
-
-    
-    label1 = Label(master, text = "Please note. The latest sample.docx file created within the project folder would be \n converted to PDF format under the name sample.pdf\n Please make sure you perform this operation after conversion \n of images into docx file format.\n")
-    label1.pack()
-    button1 = tkinter.Button(master, text='Convert to PDF', width=35, command = createpdf1)
-    button1.pack()
-    lab1 = Label(master , text = " Please wait until the process is completed....\nThis may take a minute\nYou will be displayed a success message after completion\n\nNo need to click the above button more than once.\n Sorry, but this process is a bit slow.\n\n")        
-    lab1.pack()
+    global state
+    lab1 = Label(master , text = " Please wait until the process is completed....\nThis may take a few seconds\nYou will be displayed a success message after completion\n\nNo need to click the continue button more than once.\n Sorry, but this process is a bit slow.\n")        
+    button1 = tkinter.Button(master, text='Continue', width=15, command = createpdf1 )
+    space = Label(text = "\n")
+    if(state == 2):
+        lab1.pack()
+        button1.pack()
+        space.pack()
+        state = 3
 
 def addimagesfn():
 
-
+    global state
     print("Selecting images to add")
     while(True):
         path = askopenfilename() # show an "Open" dialog box and return the path to the selected file
@@ -117,7 +122,9 @@ def addimagesfn():
             print("Addng", images_name[data])
         print('\n==========\n=  Done  =\n==========\n')
         label1 = Label(master,text = "Successfully added all images to memory\n")
-    label1.pack()
+    if(state == 0):    
+        label1.pack()
+        state = 1    
 
 
 
@@ -125,18 +132,21 @@ space = Label(text = "\n")
 space.pack()
 l1 = Label(master,text="This is a simple program to convert Images into docx and then into PDF file format.\n\nPlease select all the images you want to add to your PDF in your required order.\n\n")
 l1.pack()
-
-button1 = tkinter.Button(master, text='Add images to convert into PDF', width=35, command = addimagesfn)
-button1.pack()
-space = Label(text = "\n")
-space.pack()
-button1 = tkinter.Button(master, text='Convert Images to docx', width=35, command = convertfn)
-button1.pack()
-space = Label(text = "\n")
-space.pack()
-button1 = tkinter.Button(master, text='Convert docx file to PDF', width=35, command = createpdffn)
-button1.pack()
-space = Label(text = "\n")
-space.pack()
+try:
+    button1 = tkinter.Button(master, text='Add images to convert into PDF', width=35, command = addimagesfn)
+    button1.pack()
+    space = Label(text = "\n")
+    space.pack()
+    button1 = tkinter.Button(master, text='Convert Images to docx', width=35, command = convertfn)
+    button1.pack()
+    space = Label(text = "\n")
+    space.pack()
+    button1 = tkinter.Button(master, text='Convert docx file to PDF', width=35, command = createpdffn)
+    button1.pack()
+    space = Label(text = "\n")
+    space.pack()
+except:
+    l2 = Label(master,text="An unexpected error has occured. Please contact us if this occurs repetedly\n")
+    l2.pack()    
 
 master.mainloop()

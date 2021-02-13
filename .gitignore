@@ -4,12 +4,10 @@
 #Created doc file
 *.doc
 
-#/build files
-build/
 
 #Prod
 
 sample.docx
 sample.pdf
 
-PDF/
+PDF/sample.pdf
