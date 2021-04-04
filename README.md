@@ -8,7 +8,7 @@ A python based desktop application to automate the extremely slow and boring tas
 <code><img src="https://raw.githubusercontent.com/RishavMz/Image-To-PDF-using-Python/master/images/p1.JPG" height="200"></code>
 <code><img src="https://raw.githubusercontent.com/RishavMz/Image-To-PDF-using-Python/master/images/p2.JPG" height="200"></code>
 <code><img src="https://raw.githubusercontent.com/RishavMz/Image-To-PDF-using-Python/master/images/p3.JPG" height="200"></code>
-<code><img src="https://raw.githubusercontent.com/RishavMz/Image-To-PDF-using-Python/master/images/p4.JPG" height="700"></code>
+<code><img src="https://raw.githubusercontent.com/RishavMz/Image-To-PDF-using-Python/master/images/p4.JPG" height="500"></code>
 
     
 This application automates the boring procedure of copying all images and pasting in document which is very slow process,
@@ -32,19 +32,6 @@ of the images which further minimizes the boring task of formatting each image o
 
     ##################################################################################################
 
-        ++++++++++++++++++++++++++++++++++++++
-        +   Hope you like this application.  +
-        +                                    +
-        +            Author                  +
-        +           RishavMz                 +
-        ++++++++++++++++++++++++++++++++++++++
 
 
-
-Python libraries used:
-
-    1. Tkinter 
-    2. Python-docx
-    3. Python-opencv
-    4. Python docx2pdf
 
