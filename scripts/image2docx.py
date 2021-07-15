@@ -1,29 +1,39 @@
 from docx import Document
 from docx.shared import  Cm
 from cv2 import imread
-import os, inspect
-import sqlite3
-
+import os, inspect, sys
+#import sqlite3
 
 # Initializing variables
 imageselected = list()
 imagedimension = list()                   
 imagepath = list()   
 document = Document()
+filename = sys.argv[1] 
 
 
 # Initializing location and path 
 path= os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+imageselectedpath = path+'\..\data\database\imageselected.txt'
 dbpath = path+'\..\data\database\Image2PDF.db'
 imgpath = path+'\..\data\images'
-docxpath = path + '\..\data\doc\sample.docx' 
+docxpath = path + '\..\data\doc\\'+filename+'.docx' 
+   
+
+fhand = open(imageselectedpath, "r")
+for file in fhand:
+    f = file.rstrip()
+    if(len(f)>0):
+        imageselected.append(f)
+fhand.close()
 
 
-# Fetching data from sqlite database
-dbconn = sqlite3.connect(dbpath)
-querydata = dbconn.execute("SELECT * FROM IMAGES;")
-for row in querydata:
-    imageselected.append(row[2])
+## Add data into sqlite database (for future reference)
+#dbconn = sqlite3.connect(dbpath)
+#querydata = dbconn.execute("SELECT * FROM IMAGES;")
+#for row in querydata:
+#    imageselected.append(row[2])
+#dbconn.close() 
 
 
 # Collecting data about individual images
