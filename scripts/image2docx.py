@@ -14,9 +14,9 @@ document = Document()
 
 # Initializing location and path 
 path= os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-dbpath = path+'\..\\temp\database\Image2PDF.db'
-imgpath = path+'\..\\temp\images'
-docxpath = path + '\..\\temp\doc\sample.docx' 
+dbpath = path+'\..\data\database\Image2PDF.db'
+imgpath = path+'\..\data\images'
+docxpath = path + '\..\data\doc\sample.docx' 
 
 
 # Fetching data from sqlite database
