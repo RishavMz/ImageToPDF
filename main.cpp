@@ -47,8 +47,13 @@ int main(int argc, char** argv)
     }
     command1[l1+ld]='\0';
     command2[l2+ld]='\0';
+
+    cout<<"\n Step 1 : success => Successfully added all images\n"<<endl;
     system(command1);
+    cout<<"\n Step 2 : success => Successfully converted docx file\n"<<endl;
+    cout<<"\n Please wait... converting a PDF file...\n"<<endl;
     system(command2);
+    cout<<"\n Step 3 : success => Successfully created file\n"<<endl;
 
 
 

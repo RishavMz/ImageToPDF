@@ -1,4 +1,2 @@
-E:\Photos\photoshop\phonephoto.jpg
-E:\Photos\photoshop\invitation.jpg
-E:\Photos\clicks\dark.jpeg
 E:\Photos\clicks\gimp.jpeg
+E:\Photos\clicks\github.jpeg

@@ -3,9 +3,11 @@ import os, inspect, sys
 
 filename = sys.argv[1] 
 
-filename = filename+".pdf"
-
 path= os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-path = path+'\..\data\doc\sample.docx'
+inputpath = path+'\..\data\doc\\'+filename+'.docx'
+filename = path+'\..\PDF\\'+filename+'.pdf'
 
-convert(path,'PDF/',filename)
+print(inputpath)
+print(filename)
+
+convert(inputpath,filename)
