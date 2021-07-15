@@ -7,7 +7,4 @@ path= os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 inputpath = path+'\..\data\doc\\'+filename+'.docx'
 filename = path+'\..\PDF\\'+filename+'.pdf'
 
-print(inputpath)
-print(filename)
-
 convert(inputpath,filename)

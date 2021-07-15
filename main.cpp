@@ -35,7 +35,11 @@ int main(int argc, char** argv)
     fout.close();
 
     // Modifying and making script calls
-    string data= "Biscut";
+
+
+    string data= "Biscut";                  // This is a joke
+
+
     char command1[100] = "python scripts/image2docx.py ";
     char command2[100] = "python scripts/convert.py ";
 
