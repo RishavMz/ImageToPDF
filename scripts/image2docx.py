@@ -48,9 +48,9 @@ for filepath in imageselected:
         imagedimension.append([width,height])
 
 
-print('\n', len(imagepath), 'images found')  
+print('\n', len(imagepath), 'images found\n')  
 if(len(imagepath) == 0):
-    print("\n No image present in folder")
+    print("\n No image added")
     quit(0)          
 
      
@@ -81,6 +81,3 @@ for section in sections:
     section.right_margin = Cm(widmargin)  
 document.save(docxpath)
 
-
-print('\n==========\n=  Done  =\n==========\n')
-print("Successfully created a docx file\n")

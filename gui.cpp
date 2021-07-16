@@ -2,6 +2,7 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include <unistd.h>
 #include <commdlg.h>      // To allow GetOpenFileName
 
 #define CONVERT 1 
@@ -164,10 +165,8 @@ void convert()
 {
     char command1[100] = "python scripts/image2docx.py ";
     char command2[100] = "python scripts/convert.py ";
-    char command3[100] = "cd ";
-    for(int i=0; i<PATH.length(); i++)
-        command3[strlen(command3)] = PATH[i];
-    std::cout<<command3<<std::endl;
+    std::string command3 = PATH;
+    
     int l1 = strlen(command1), l2 = strlen(command2), ld = strlen(filename);
     for(int i=0; i<ld; i++)
     {
@@ -178,12 +177,12 @@ void convert()
     command2[l2+ld]='\0';
 
     std::cout<<"\n Step 1 : success => Successfully added all images\n"<<std::endl;
-    system(command3);
-    system("timeout 1");
-    system("dir ");
+    chdir(command3.c_str());
     system(command1);
     std::cout<<"\n Step 2 : success => Successfully converted docx file\n"<<std::endl;
-    std::cout<<"\n Please wait... converting a PDF file...\n"<<std::endl;
+    SetWindowText(Selected, "Please wait... creating PDF file");
     system(command2);
     std::cout<<"\n Step 3 : success => Successfully created file\n"<<std::endl;
+    SetWindowText(Selected, "Successfully generated PDF file");
+
 }
