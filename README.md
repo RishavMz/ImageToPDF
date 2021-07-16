@@ -1,6 +1,10 @@
-A GUI based Image to PDF converter which allows user to select a list of images from his PC and add them to a single PDF file.
+<center>
 
-<code><img src="https://raw.githubusercontent.com/RishavMz/ImageToPDF/master/data/ImageToPDF.png" height="200"></code>
+<b>A GUI based Image to PDF converter which allows user to select a list of images from his PC and add them to a single PDF file.</b>
+
+<code><img src="https://raw.githubusercontent.com/RishavMz/ImageToPDF/master/data/ImageToPDF.png" height="500"></code>
+</center>
+
 
 ## How to run this application on your machine
 
