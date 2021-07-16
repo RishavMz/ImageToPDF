@@ -2,7 +2,7 @@ from docx import Document
 from docx.shared import  Cm
 from cv2 import imread
 import os, inspect, sys
-#import sqlite3
+
 
 # Initializing variables
 imageselected = list()
@@ -26,14 +26,6 @@ for file in fhand:
     if(len(f)>0):
         imageselected.append(f)
 fhand.close()
-
-
-## Add data into sqlite database (for future reference)
-#dbconn = sqlite3.connect(dbpath)
-#querydata = dbconn.execute("SELECT * FROM IMAGES;")
-#for row in querydata:
-#    imageselected.append(row[2])
-#dbconn.close() 
 
 
 # Collecting data about individual images
