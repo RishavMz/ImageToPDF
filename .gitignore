@@ -1,8 +1,8 @@
 
 /PDF/*.pdf
 /data/doc/*.docx
+/data/database/imageselected.txt
 
 .vscode/*.*
 
-main.cpp
 a.exe
