@@ -1,4 +1,8 @@
 
 /PDF/*.pdf
 /data/doc/*.docx
+
+.vscode/*.*
+
+main.cpp
 a.exe
