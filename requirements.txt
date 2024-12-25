@@ -3,7 +3,7 @@ docx2pdf==0.1.7
 importlib-metadata==1.7.0
 lxml==4.9.1
 numpy==1.22.0
-opencv-python==4.5.3.56
+opencv-python==4.8.1.78
 python-docx==0.8.11
 pywin32==301
 tqdm==4.61.2
