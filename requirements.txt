@@ -2,7 +2,7 @@ colorama==0.4.4
 docx2pdf==0.1.7
 importlib-metadata==1.7.0
 lxml==4.9.1
-numpy==1.21.0
+numpy==1.22.0
 opencv-python==4.5.3.56
 python-docx==0.8.11
 pywin32==301
