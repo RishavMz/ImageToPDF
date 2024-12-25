@@ -7,4 +7,4 @@ opencv-python==4.8.1.78
 python-docx==0.8.11
 pywin32==301
 tqdm==4.61.2
-zipp==3.5.0
+zipp==3.19.1
